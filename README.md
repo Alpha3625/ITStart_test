@@ -1,50 +1,21 @@
-# React + TypeScript + Vite
+# ITStart_test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Процесс запуска
+1. Клонировать репозиторий ```git clone https://github.com/Alpha3625/ITStart_test.git```
+2. Установить необходимые пакеты ```npm install```
+3. Запустить JSON-сервер ```npm run json-server```
+4. Запустить проект ```npm run dev```
 
-Currently, two official plugins are available:
+## Дополнительная информация
+Если потребуется восстановить содержимое файла ```seminars.json```, есть копия ```/reserveDB/reserveSeminars.json```
+   
+## Используемые технологии
+[![My Skills](https://skillicons.dev/icons?i=react,typescript,vite,sass)](https://skillicons.dev)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Опубликованная версия
+[Перейти на сайт](https://alpha3625.github.io/ITStart_test/)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Скриншоты
+<img width="100" src="https://github.com/user-attachments/assets/165e41bf-a46d-4115-ad17-71728873ca44" />
+<img src="https://github.com/user-attachments/assets/d612e26e-ddf4-4526-b0ae-8a106fbce57c" width="360" height="800">
+<img src="https://github.com/user-attachments/assets/e81f0af1-67d5-4472-a0b2-effc92f32cdd" width="360" height="800">
