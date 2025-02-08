@@ -8,7 +8,7 @@ import Loader from './components/Loader/Loader';
 
 function App() {
   const [seminars, setSeminars] = useState<ISeminars[]>([]);
-  const [listItemId, setListItemId] = useState<{ index: number | null, id: number | null }>({ index: null, id: null });
+  const [currentItemId, setCurrentItemId] = useState<{ index: number | null, id: number | null }>({ index: null, id: null });
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<unknown | null>(null);
   const [confirmWindow, setConfirmWindow] = useState<boolean>(false);
@@ -48,15 +48,15 @@ function App() {
 
   const handleDelete = (index: number, item: ISeminars) => {
     setConfirmWindow(true);
-    setListItemId({
+    setCurrentItemId({
       index: index,
       id: item.id
     });
   };
 
   const handleConfirmDelete = async () => {
-    if (listItemId) {
-      await axios.delete(`${url}/${listItemId.id}`)
+    if (currentItemId) {
+      await axios.delete(`${url}/${currentItemId.id}`)
         .then(response => {
           console.log('Запись успешно удалена: ', response.data);
         })
@@ -65,13 +65,13 @@ function App() {
         });
     }
     
-    const newList = seminars.filter(item => item.id !== listItemId?.id);
+    const newList = seminars.filter(item => item.id !== currentItemId?.id);
     setSeminars(newList);
     setConfirmWindow(false);
   };
 
   const handleCancelDelete = () => {
-    setListItemId({
+    setCurrentItemId({
       index: null,
       id: null
     });
@@ -80,7 +80,7 @@ function App() {
   
   const handleEditItem = (index: number, item: ISeminars) => {
     setEditWindow(true);
-    setListItemId({
+    setCurrentItemId({
       index: index,
       id: item.id
     });
@@ -88,8 +88,8 @@ function App() {
   };
 
   const handleUpdateItem = async (updatedItem: ISeminars) => {
-    if (listItemId && updatedItem) {
-      await axios.put(`${url}/${listItemId.id!}`, {...updatedItem})
+    if (currentItemId && updatedItem) {
+      await axios.put(`${url}/${currentItemId.id!}`, {...updatedItem})
       .then(response => {
         console.log('Данные успешно обновлены: ', response.data);
       })
@@ -98,7 +98,7 @@ function App() {
       });
 
       const updatedData = seminars.map(item =>
-        item.id === listItemId.id ? {...updatedItem} : item
+        item.id === currentItemId.id ? {...updatedItem} : item
       );
       setSeminars(updatedData);
       setCurrentEditedItem(null);

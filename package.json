@@ -3,15 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://alpha3625.github.io/ITStart_test/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "json-server": "json-server --watch seminars.json --port 3001",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "json-server": "json-server --watch seminars.json --port 3001"
   },
   "dependencies": {
     "axios": "^1.7.9",
