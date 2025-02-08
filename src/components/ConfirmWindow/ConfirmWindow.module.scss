@@ -1,0 +1,53 @@
+.confirm-window {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 40px 20px;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    top: 40%;
+    right: 0;
+    left: 0;
+    z-index: 10000;
+
+    @media screen and (max-width: 500px) {
+        padding: 20px 10px;
+        max-width: 300px;
+    }
+
+    &>p {
+        margin-bottom: 30px;
+    }
+
+    &__buttons {
+        &>button {
+            width: 100%;
+            max-width: 100px;
+            height: 30px;
+            background-color: #333;
+            border-radius: 8px;
+            color: #fff;
+            cursor: pointer;
+
+            &:first-child {
+                margin-right: 20px;
+                background-color: #05b705;
+
+                &:active {
+                    background-color: #027c02;
+                }
+            }
+
+            &:last-child {
+                background-color: #ff0000;
+
+                &:active {
+                    background-color: #ac0101;
+                }
+            }
+        }
+    }
+}

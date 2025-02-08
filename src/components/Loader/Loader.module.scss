@@ -1,0 +1,49 @@
+.flames {
+  width: 100px;
+  height: 200px;
+  margin: 0 auto;
+  position: fixed;
+  top: 30%;
+  right: 0;
+  left: 0;
+
+  @media screen and (max-width: 500px) {
+    top: 20%;
+  }
+
+  @media screen and (max-width: 320px) {
+    top: 10%;
+  }
+}
+
+.flames__item {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 10px;
+  height: 50px;
+  background-color: #FF5733;
+  box-shadow: 0px 5px 10px 2px #000000;
+  border-radius: 5px;
+  animation: flameAnimation 1s ease-in-out infinite;
+
+  &:nth-child(2) {
+    left: 30%;
+    animation-delay: 0.2s;
+  }
+  
+  &:nth-child(3) {
+    left: 70%;
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes flameAnimation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+}
