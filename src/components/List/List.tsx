@@ -4,11 +4,11 @@ import styles from './List.module.scss';
 
 interface IList {
     seminars: ISeminars[];
-    handleDelete: (index: number, item: ISeminars) => void;
-    handleEditItem: (index: number, item: ISeminars) => void;
+    handleDelete: (item: ISeminars) => void;
+    handleEdit: (item: ISeminars) => void;
 }
 
-export const List: FC<IList> = ({seminars, handleDelete, handleEditItem}) => {
+export const List: FC<IList> = ({seminars, handleDelete, handleEdit}) => {
     return (
         <ul className={styles.list}>
             {
@@ -21,10 +21,9 @@ export const List: FC<IList> = ({seminars, handleDelete, handleEditItem}) => {
                     seminars.map((item, index) => (
                         <Card
                             key={index}
-                            index={index}
                             item={item}
                             handleDelete={handleDelete}
-                            handleEditItem={handleEditItem} />
+                            handleEditItem={handleEdit} />
                     ))
                 )
             }
