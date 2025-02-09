@@ -12,19 +12,18 @@ export const List: FC<IList> = ({seminars, handleDelete, handleEdit}) => {
     return (
         <ul className={styles.list}>
             {
-                seminars.length === 0 ? (
-                    <li className={styles.list__empty}>
-                        К сожалению, в данный момент нет запланированных семинаров.
-                        Подпишитесь на наши обновления, чтобы первыми узнать о новых мероприятиях!
-                    </li>
-                ) : (
+                seminars.length !== 0 ? (
                     seminars.map((item, index) => (
                         <Card
                             key={index}
                             item={item}
                             handleDelete={handleDelete}
-                            handleEditItem={handleEdit} />
-                    ))
+                            handleEditItem={handleEdit} />))
+                ) : (
+                    <li className={styles.list__empty}>
+                        К сожалению, в данный момент нет запланированных семинаров.
+                        Подпишитесь на наши обновления, чтобы первыми узнать о новых мероприятиях!
+                    </li>
                 )
             }
         </ul>

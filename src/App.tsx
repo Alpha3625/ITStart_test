@@ -85,7 +85,7 @@ function App() {
 
   // Обработчик обновления
   const handleUpdate = async (updatedData: ISeminars) => {
-    if (updatedData && updatedData.id) {
+    if (updatedData) {
       try {
         const response = await axios.put(`${url}/${updatedData.id}`, {...updatedData});  
         const updatedItem = seminars.map(item => item.id === updatedData.id ? {...updatedData} : item);

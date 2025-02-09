@@ -13,6 +13,16 @@ export const EditingPanel: FC<IEditingPanel> = ({
     currentEditedItem,
     handleUpdate,
     handleCancelUpdate}) => {
+
+    // Состояние для хранения отформатированной даты
+    const [formattedDate, setFormattedDate] = useState<string>('');
+
+    // useEffect для установки отформатированной даты при изменении currentEditedItem
+    useEffect(() => {
+        if (currentEditedItem?.date) {
+            setFormattedDate(formatDate(currentEditedItem.date));
+        }
+    }, [currentEditedItem?.date]);
        
     // Форматирует дату из формата "дд.мм.гггг" в "гггг-мм-дд"
     const formatDate = (dateString: string): string => {
@@ -25,16 +35,6 @@ export const EditingPanel: FC<IEditingPanel> = ({
         const [day, month, year] = dateString.split('-').reverse();
         return `${day}.${month}.${year}`;
     };
-
-    // Состояние для хранения отформатированной даты
-    const [formattedDate, setFormattedDate] = useState<string>('');
-
-    // useEffect для установки отформатированной даты при изменении currentEditedItem
-    useEffect(() => {
-        if (currentEditedItem?.date) {
-            setFormattedDate(formatDate(currentEditedItem.date));
-        }
-    }, [currentEditedItem?.date]);
 
     // Обработчик отправки формы
     const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
