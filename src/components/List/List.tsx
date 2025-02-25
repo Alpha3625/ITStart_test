@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { Card } from '../Card/Card';
 import styles from './List.module.scss';
 
@@ -8,7 +8,7 @@ interface IList {
     handleEdit: (item: ISeminars) => void;
 }
 
-export const List: FC<IList> = ({seminars, handleDelete, handleEdit}) => {
+export const List: FC<IList> = memo(({seminars, handleDelete, handleEdit}) => {
     return (
         <ul className={styles.list}>
             {
@@ -28,4 +28,4 @@ export const List: FC<IList> = ({seminars, handleDelete, handleEdit}) => {
             }
         </ul>
     );
-};
+});
