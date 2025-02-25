@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
 import { ConfirmWindow } from './components/ConfirmWindow/ConfirmWindow';
 import { List } from './components/List/List';
@@ -50,13 +50,13 @@ function App() {
   }, [confirmWindow, editWindow]);
 
   // Обработчик удаления семинара
-  const handleDelete = (item: ISeminars) => {
+  const handleDelete = useCallback((item: ISeminars) => {
     setConfirmWindow(true);
     setCurrentItemId(item.id);
-  };
+  }, []);
 
   // Обработчик подтверждения удаления
-  const handleConfirmDelete = async () => {
+  const handleConfirmDelete = useCallback(async () => {
     if (currentItemId) {
       try {
         const response = await axios.delete(`${url}/${currentItemId}`);
@@ -68,7 +68,7 @@ function App() {
         console.log('Ошибка при удалении записи: ', err);
       }
     }
-  };
+  }, [currentItemId, seminars]);
 
   // Обработчик отмены удаления
   const handleCancelDelete = () => {
@@ -77,14 +77,14 @@ function App() {
   };
   
   // Обработчик редактирования
-  const handleEdit = (item: ISeminars) => {
+  const handleEdit = useCallback((item: ISeminars) => {
     setEditWindow(true);
     setCurrentItemId(item.id);
     setCurrentEditedItem(item);
-  };
+  }, []);
 
   // Обработчик обновления
-  const handleUpdate = async (updatedData: ISeminars) => {
+  const handleUpdate = useCallback(async (updatedData: ISeminars) => {
     if (updatedData) {
       try {
         const response = await axios.put(`${url}/${updatedData.id}`, {...updatedData});  
@@ -97,7 +97,7 @@ function App() {
         console.log('Ошибка при обновлении: ', err);
       }
     }
-  };
+  }, [seminars]);
   
   // Обработчик изменения данных формы редактирования
   const handleUpdateFormData = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>) => {
