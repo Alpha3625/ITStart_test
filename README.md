@@ -42,6 +42,6 @@
 
 ### 📱 Mobile
 <div align="center">
-    <img height="350px" src="https://github.com/user-attachments/assets/bde60af3-17af-4bec-be5b-f208201381b2"/>
-    <img height="350px" src="https://github.com/user-attachments/assets/c1569eda-a6ec-4588-90a1-6d4ff0c1bf34"/>
+    <img height="400px" src="https://github.com/user-attachments/assets/bde60af3-17af-4bec-be5b-f208201381b2"/>
+    <img height="400px" src="https://github.com/user-attachments/assets/c1569eda-a6ec-4588-90a1-6d4ff0c1bf34"/>
 </div>
