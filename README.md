@@ -32,7 +32,7 @@
     ```
    
 ## Используемые технологии
-[![My Skills](https://skillicons.dev/icons?i=react,typescript,vite,sass)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=react,typescript,vite,sass,axios)](https://skillicons.dev)
 
 ## Скриншоты
 ### 💻 Desktop
