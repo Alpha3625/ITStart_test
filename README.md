@@ -37,7 +37,7 @@
 ## Скриншоты
 ### 💻 Desktop
 <div align="center">
-    <img width="400px" height="300px" src="https://github.com/user-attachments/assets/165e41bf-a46d-4115-ad17-71728873ca44"/>
+    <img src="https://github.com/user-attachments/assets/165e41bf-a46d-4115-ad17-71728873ca44"/>
 </div>
 
 ### 📱 Mobile
